@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Delete Genre
+
+  if error
+    p.text-danger #{error}
+
+  p Are you sure you want to delete the genre "#{genre.name}"?
+
+  if books_in_genre && books_in_genre.length > 0
+    p.text-warning This genre cannot be deleted because it is associated with the following books:
+    ul
+      each book in books_in_genre
+        li
+          a(href=book.url) #{book.title}
+  else
+    form(method="POST" action=genre.url + "/delete")
+      input(type="hidden", name="genreid", value=genre._id)
+      button.btn.btn-danger(type="submit") Delete
+      a.btn.btn-secondary(href="/catalog/genres") Cancel

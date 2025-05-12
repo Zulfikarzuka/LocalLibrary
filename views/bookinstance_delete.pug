@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Delete BookInstance
+
+  p Are you sure you want to delete this BookInstance?
+  ul
+    li Book: #{bookinstance.book.title}
+    li Imprint: #{bookinstance.imprint}
+    li Status: #{bookinstance.status}
+    li Due Back: #{bookinstance.due_back ? bookinstance.due_back.toDateString() : 'N/A'}
+
+  form(method="POST" action=bookinstance.url + "/delete")
+    input(type="hidden", name="bookinstanceid", value=bookinstance._id)
+    button.btn.btn-danger(type="submit") Delete
+    a.btn.btn-secondary(href="/catalog/bookinstances") Cancel

@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(33, 33, 33);
+}
+
+a {
+  color: #00b7ff;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+p,
+dd,
+span.label,
+span.date,
+span.name,label,
+ol {
+  color: rgb(224, 221, 221);
+}
+
+ul {
+  margin-left: -3em;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 1em;
+  color: rgb(242, 97, 97);
+  font-size: 1em;
+}
+
+#family_name,
+#first_name,
+#date_of_birth,
+#date_of_death,
+#name {
+  width: 20em;
+}

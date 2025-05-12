@@ -1,0 +1,33 @@
+{
+  "name": "helloworld",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "compression": "^1.8.0",
+    "cookie-parser": "~1.4.4",
+    "date-fns": "^4.1.0",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "luxon": "^3.6.1",
+    "mogoose": "^0.0.1-security",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "engines": {
+    "node": ">=16.17.1"
+  }
+}

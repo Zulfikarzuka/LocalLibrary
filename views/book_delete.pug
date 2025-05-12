@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Delete Book
+
+  p Are you sure you want to delete the book "#{book.title}"?
+
+  if book_instances.length > 0
+    p.text-warning This book cannot be deleted because it has associated copies:
+    ul
+      each bi in book_instances
+        li #{bi.imprint} (Status: #{bi.status})
+  else
+    form(method="POST" action=book.url + "/delete")
+      input(type="hidden", name="bookid", value=book._id)
+      button.btn.btn-danger(type="submit") Delete
+      a.btn.btn-secondary(href="/catalog/books") Cancel
