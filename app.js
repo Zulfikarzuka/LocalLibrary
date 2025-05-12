@@ -12,9 +12,9 @@ const catalogRouter = require("./routes/catalog");
 const compression = require("compression");
 const helmet = require("helmet");
 
-
 const app = express();
 
+app.set("trust proxy", 1); // Percayai proxy pertama (Railway, Heroku, dll.)
 // Set up rate limiter: maximum of twenty requests per minute
 const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
@@ -23,7 +23,7 @@ const limiter = RateLimit({
 });
 
 // MongoDB Connection
-const mongoURI = process.env.MONGO_URI || "your_mongodb_connection_string_here";
+const mongoURI = process.env.MONGO_URI;
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
